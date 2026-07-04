@@ -7,6 +7,27 @@ import tamilNaduDistricts, { tamilNaduDistrictNames } from './districts/tamil-na
 import rajasthanDistricts, { rajasthanDistrictNames } from './districts/rajasthan';
 import odishaDistricts, { odishaDistrictNames } from './districts/odisha';
 import westBengalDistricts, { westBengalDistrictNames } from './districts/west-bengal';
+import punjabDistricts, { punjabDistrictNames } from './districts/punjab';
+import haryanaDistricts, { haryanaDistrictNames } from './districts/haryana';
+import gujaratDistricts, { gujaratDistrictNames } from './districts/gujarat';
+import goaDistricts, { goaDistrictNames } from './districts/goa';
+import assamDistricts, { assamDistrictNames } from './districts/assam';
+import karnatakaDistricts, { karnatakaDistrictNames } from './districts/karnataka';
+import madhyaPradeshDistricts, { madhyaPradeshDistrictNames } from './districts/madhya-pradesh';
+import andhraPradeshDistricts, { andhraPradeshDistrictNames } from './districts/andhra-pradesh';
+import telanganaDistricts, { telanganaDistrictNames } from './districts/telangana';
+import jharkhandDistricts, { jharkhandDistrictNames } from './districts/jharkhand';
+import himachalPradeshDistricts, { himachalPradeshDistrictNames } from './districts/himachal-pradesh';
+import uttarakhandDistricts, { uttarakhandDistrictNames } from './districts/uttarakhand';
+import chhattisgarh, { chhattisgarh_DistrictNames } from './districts/chhattisgarh';
+import arunachalPradesh, { arunachalPradesh_DistrictNames } from './districts/arunachal-pradesh';
+import manipur, { manipur_DistrictNames } from './districts/manipur';
+import meghalaya, { meghalaya_DistrictNames } from './districts/meghalaya';
+import mizoram, { mizoram_DistrictNames } from './districts/mizoram';
+import nagaland, { nagaland_DistrictNames } from './districts/nagaland';
+import sikkim, { sikkim_DistrictNames } from './districts/sikkim';
+import tripura, { tripura_DistrictNames } from './districts/tripura';
+import unionTerritories, { unionTerritories_DistrictNames } from './districts/union-territories';
 import { stateMeta } from './statesMetadata';
 
 const districtRegistry = {
@@ -19,6 +40,27 @@ const districtRegistry = {
   rajasthan: { data: rajasthanDistricts, names: rajasthanDistrictNames },
   odisha: { data: odishaDistricts, names: odishaDistrictNames },
   'west-bengal': { data: westBengalDistricts, names: westBengalDistrictNames },
+  punjab: { data: punjabDistricts, names: punjabDistrictNames },
+  haryana: { data: haryanaDistricts, names: haryanaDistrictNames },
+  gujarat: { data: gujaratDistricts, names: gujaratDistrictNames },
+  goa: { data: goaDistricts, names: goaDistrictNames },
+  assam: { data: assamDistricts, names: assamDistrictNames },
+  karnataka: { data: karnatakaDistricts, names: karnatakaDistrictNames },
+  'madhya-pradesh': { data: madhyaPradeshDistricts, names: madhyaPradeshDistrictNames },
+  'andhra-pradesh': { data: andhraPradeshDistricts, names: andhraPradeshDistrictNames },
+  telangana: { data: telanganaDistricts, names: telanganaDistrictNames },
+  jharkhand: { data: jharkhandDistricts, names: jharkhandDistrictNames },
+  'himachal-pradesh': { data: himachalPradeshDistricts, names: himachalPradeshDistrictNames },
+  uttarakhand: { data: uttarakhandDistricts, names: uttarakhandDistrictNames },
+  chhattisgarh: { data: chhattisgarh, names: chhattisgarh_DistrictNames },
+  'arunachal-pradesh': { data: arunachalPradesh, names: arunachalPradesh_DistrictNames },
+  manipur: { data: manipur, names: manipur_DistrictNames },
+  meghalaya: { data: meghalaya, names: meghalaya_DistrictNames },
+  mizoram: { data: mizoram, names: mizoram_DistrictNames },
+  nagaland: { data: nagaland, names: nagaland_DistrictNames },
+  sikkim: { data: sikkim, names: sikkim_DistrictNames },
+  tripura: { data: tripura, names: tripura_DistrictNames },
+  'union-territories': { data: unionTerritories, names: unionTerritories_DistrictNames },
 };
 
 export const stateCategories = {
