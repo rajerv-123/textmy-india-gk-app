@@ -1,0 +1,259 @@
+// All 28 States and 8 Union Territories with metadata
+export const statesList = [
+  { id: 'andhra-pradesh', type: 'state', code: 'AP', color: '#FF6B35' },
+  { id: 'arunachal-pradesh', type: 'state', code: 'AR', color: '#F7931E' },
+  { id: 'assam', type: 'state', code: 'AS', color: '#008751' },
+  { id: 'bihar', type: 'state', code: 'BR', color: '#004225' },
+  { id: 'chhattisgarh', type: 'state', code: 'CG', color: '#C4A000' },
+  { id: 'goa', type: 'state', code: 'GA', color: '#FF9933' },
+  { id: 'gujarat', type: 'state', code: 'GJ', color: '#FF9933' },
+  { id: 'haryana', type: 'state', code: 'HR', color: '#FFD700' },
+  { id: 'himachal-pradesh', type: 'state', code: 'HP', color: '#4A90D9' },
+  { id: 'jharkhand', type: 'state', code: 'JH', color: '#2E8B57' },
+  { id: 'karnataka', type: 'state', code: 'KA', color: '#FFD700' },
+  { id: 'kerala', type: 'state', code: 'KL', color: '#006400' },
+  { id: 'madhya-pradesh', type: 'state', code: 'MP', color: '#FF6600' },
+  { id: 'maharashtra', type: 'state', code: 'MH', color: '#FF9933' },
+  { id: 'manipur', type: 'state', code: 'MN', color: '#8B0000' },
+  { id: 'meghalaya', type: 'state', code: 'ML', color: '#228B22' },
+  { id: 'mizoram', type: 'state', code: 'MZ', color: '#FF6347' },
+  { id: 'nagaland', type: 'state', code: 'NL', color: '#DC143C' },
+  { id: 'odisha', type: 'state', code: 'OD', color: '#FF4500' },
+  { id: 'punjab', type: 'state', code: 'PB', color: '#FF9933' },
+  { id: 'rajasthan', type: 'state', code: 'RJ', color: '#FF6347' },
+  { id: 'sikkim', type: 'state', code: 'SK', color: '#DC143C' },
+  { id: 'tamil-nadu', type: 'state', code: 'TN', color: '#FFD700' },
+  { id: 'telangana', type: 'state', code: 'TS', color: '#FF9933' },
+  { id: 'tripura', type: 'state', code: 'TR', color: '#FF6347' },
+  { id: 'uttar-pradesh', type: 'state', code: 'UP', color: '#FF9933' },
+  { id: 'uttarakhand', type: 'state', code: 'UK', color: '#4169E1' },
+  { id: 'west-bengal', type: 'state', code: 'WB', color: '#FF6347' },
+  { id: 'andaman-nicobar', type: 'ut', code: 'AN', color: '#008080' },
+  { id: 'chandigarh', type: 'ut', code: 'CH', color: '#4682B4' },
+  { id: 'dadra-nagar-haveli-daman-diu', type: 'ut', code: 'DN', color: '#20B2AA' },
+  { id: 'delhi', type: 'ut', code: 'DL', color: '#FF6347' },
+  { id: 'jammu-kashmir', type: 'ut', code: 'JK', color: '#4169E1' },
+  { id: 'ladakh', type: 'ut', code: 'LA', color: '#6495ED' },
+  { id: 'lakshadweep', type: 'ut', code: 'LD', color: '#00CED1' },
+  { id: 'puducherry', type: 'ut', code: 'PY', color: '#FF7F50' },
+];
+
+export const stateMeta = {
+  'andhra-pradesh': {
+    name: { en: 'Andhra Pradesh', hi: 'आंध्र प्रदेश' },
+    capital: { en: 'Amaravati (de facto), Visakhapatnam (executive)', hi: 'अमरावती, विशाखापट्टनम' },
+    formation: { en: '1 November 1956 (reorganized 2014)', hi: '1 नवंबर 1956' },
+    area: { en: '1,62,975 sq km', hi: '1,62,975 वर्ग किमी' },
+    population: { en: '4.95 crore (2011)', hi: '4.95 करोड़ (2011)' },
+    language: { en: 'Telugu', hi: 'तेलुगु' },
+    literacy: { en: '67.4%', hi: '67.4%' },
+    overview: {
+      en: 'Andhra Pradesh is a state on the southeastern coast of India, known for Tirupati temple, Kuchipudi dance, and rich Telugu culture.',
+      hi: 'आंध्र प्रदेश भारत के दक्षिण-पूर्वी तट पर स्थित राज्य है, जो तिरुपति मंदिर, कुचिपुड़ी नृत्य और समृद्ध तेलुगु संस्कृति के लिए प्रसिद्ध है।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Andhra_Pradesh', govt: 'https://www.ap.gov.in/' },
+  },
+  bihar: {
+    name: { en: 'Bihar', hi: 'बिहार' },
+    capital: { en: 'Patna', hi: 'पटना' },
+    formation: { en: '22 March 1912 (as Bihar & Orissa); 26 January 1950', hi: '22 मार्च 1912' },
+    area: { en: '94,163 sq km', hi: '94,163 वर्ग किमी' },
+    population: { en: '10.4 crore (2011)', hi: '10.4 करोड़ (2011)' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '63.8%', hi: '63.8%' },
+    overview: {
+      en: 'Bihar is the cradle of ancient Indian civilization — home to Nalanda University, Bodh Gaya, and the Maurya and Gupta empires.',
+      hi: 'बिहार प्राचीन भारतीय सभ्यता का पालना है — नालंदा विश्वविद्यालय, बोधगया और मौर्य-गुप्त साम्राज्यों का घर।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Bihar', govt: 'https://state.bihar.gov.in/' },
+  },
+  kerala: {
+    name: { en: 'Kerala', hi: 'केरल' },
+    capital: { en: 'Thiruvananthapuram', hi: 'तिरुवनंतपुरम' },
+    formation: { en: '1 November 1956', hi: '1 नवंबर 1956' },
+    area: { en: '38,863 sq km', hi: '38,863 वर्ग किमी' },
+    population: { en: '3.34 crore (2011)', hi: '3.34 करोड़ (2011)' },
+    language: { en: 'Malayalam', hi: 'मलयालम' },
+    literacy: { en: '94.0% (highest in India)', hi: '94.0% (भारत में सर्वोच्च)' },
+    overview: {
+      en: 'Kerala, "God\'s Own Country", is renowned for backwaters, Ayurveda, Kathakali, and the highest literacy rate in India.',
+      hi: 'केरल "ईश्वर का अपना देश" — बैकवाटर, आयुर्वेद, कथकली और भारत की सर्वोच्च साक्षरता दर के लिए प्रसिद्ध।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Kerala', govt: 'https://kerala.gov.in/' },
+  },
+  maharashtra: {
+    name: { en: 'Maharashtra', hi: 'महाराष्ट्र' },
+    capital: { en: 'Mumbai', hi: 'मुंबई' },
+    formation: { en: '1 May 1960', hi: '1 मई 1960' },
+    area: { en: '3,07,713 sq km', hi: '3,07,713 वर्ग किमी' },
+    population: { en: '11.2 crore (2011)', hi: '11.2 करोड़ (2011)' },
+    language: { en: 'Marathi', hi: 'मराठी' },
+    literacy: { en: '82.3%', hi: '82.3%' },
+    overview: {
+      en: 'Maharashtra is India\'s most industrialized state, home to Mumbai (financial capital), Ajanta-Ellora caves, and Maratha heritage.',
+      hi: 'महाराष्ट्र भारत का सबसे industrialized राज्य है — मुंबई, अजanta-एलोरा गुफाएं और मराठा विरासत का घर।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Maharashtra', govt: 'https://www.maharashtra.gov.in/' },
+  },
+  'uttar-pradesh': {
+    name: { en: 'Uttar Pradesh', hi: 'उत्तर प्रदेश' },
+    capital: { en: 'Lucknow', hi: 'लखनऊ' },
+    formation: { en: '26 January 1950', hi: '26 जनवरी 1950' },
+    area: { en: '2,40,928 sq km', hi: '2,40,928 वर्ग किमी' },
+    population: { en: '19.98 crore (2011) — most populous', hi: '19.98 करोड़ (2011) — सबसे अधिक जनसंख्या' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '67.7%', hi: '67.7%' },
+    overview: {
+      en: 'Uttar Pradesh is India\'s most populous state, home to Taj Mahal, Varanasi, Ayodhya, and the Ganges plains.',
+      hi: 'उत्तर प्रदेश भारत का सबसे अधिक populated राज्य — ताजमहल, वाराणसी, अयोध्या और गंगा के मैदान का घर।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Uttar_Pradesh', govt: 'https://up.gov.in/' },
+  },
+  rajasthan: {
+    name: { en: 'Rajasthan', hi: 'राजस्थान' },
+    capital: { en: 'Jaipur', hi: 'जयपुर' },
+    formation: { en: '26 January 1950', hi: '26 जनवरी 1950' },
+    area: { en: '3,42,239 sq km (largest by area)', hi: '3,42,239 वर्ग किमी (क्षेत्रफल में सबसे बड़ा)' },
+    population: { en: '6.86 crore (2011)', hi: '6.86 करोड़ (2011)' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '66.1%', hi: '66.1%' },
+    overview: {
+      en: 'Rajasthan, the Land of Kings, spans the Thar Desert with magnificent forts, palaces, and vibrant folk culture.',
+      hi: 'राजस्थान, राजाओं की भूमि — थार मरुस्थल, शानदार किले, महल और जीवंत लोक संस्कृति।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Rajasthan', govt: 'https://rajasthan.gov.in/' },
+  },
+  delhi: {
+    name: { en: 'Delhi (NCT)', hi: 'दिल्ली (राष्ट्रीय राजधानी क्षेत्र)' },
+    capital: { en: 'New Delhi', hi: 'नई दिल्ली' },
+    formation: { en: '1 November 1956 (UT); 1991 (NCT)', hi: '1 नवंबर 1956' },
+    area: { en: '1,484 sq km', hi: '1,484 वर्ग किमी' },
+    population: { en: '1.68 crore (2011)', hi: '1.68 करोड़ (2011)' },
+    language: { en: 'Hindi, English', hi: 'हिंदी, अंग्रेजी' },
+    literacy: { en: '86.2%', hi: '86.2%' },
+    overview: {
+      en: 'Delhi is the National Capital Territory and political heart of India, blending Mughal, British, and modern architecture.',
+      hi: 'दिल्ली भारत का राष्ट्रीय राजधानी क्षत्र — मुगल, ब्रिटिश और आधुनिक वास्तुकला का संगम।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Delhi', govt: 'https://delhi.gov.in/' },
+  },
+  karnataka: {
+    name: { en: 'Karnataka', hi: 'कर्नाटक' },
+    capital: { en: 'Bengaluru', hi: 'बेंगलुरु' },
+    formation: { en: '1 November 1956', hi: '1 नवंबर 1956' },
+    area: { en: '1,91,791 sq km', hi: '1,91,791 वर्ग किमी' },
+    population: { en: '6.11 crore (2011)', hi: '6.11 करोड़ (2011)' },
+    language: { en: 'Kannada', hi: 'कन्नड़' },
+    literacy: { en: '75.4%', hi: '75.4%' },
+    overview: {
+      en: 'Karnataka is India\'s tech hub (Bengaluru), with Hampi ruins, Mysore Palace, and Western Ghats biodiversity.',
+      hi: 'कर्नाटक भारत का टेक हब (बेंगलुरु) — हंपी, मैसूर पैलेस और पश्चिमी घाट की जैव विविधता।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Karnataka', govt: 'https://www.karnataka.gov.in/' },
+  },
+  'tamil-nadu': {
+    name: { en: 'Tamil Nadu', hi: 'तमिलनाडु' },
+    capital: { en: 'Chennai', hi: 'चेन्नई' },
+    formation: { en: '26 January 1950 (as Madras State); 1969 renamed', hi: '26 जनवरी 1950' },
+    area: { en: '1,30,058 sq km', hi: '1,30,058 वर्ग किमी' },
+    population: { en: '7.21 crore (2011)', hi: '7.21 करोड़ (2011)' },
+    language: { en: 'Tamil', hi: 'तमिल' },
+    literacy: { en: '80.1%', hi: '80.1%' },
+    overview: {
+      en: 'Tamil Nadu preserves ancient Dravidian culture with magnificent temples, Bharatanatyam, and Chennai as a major port city.',
+      hi: 'तमिलनाडु प्राचीन द्रविड़ संस्कृति — भव्य मंदिर, भरतनाट्यम और चेन्नई बंदरगाह।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Tamil_Nadu', govt: 'https://www.tn.gov.in/' },
+  },
+  gujarat: {
+    name: { en: 'Gujarat', hi: 'गुजरात' },
+    capital: { en: 'Gandhinagar', hi: 'गांधीनगर' },
+    formation: { en: '1 May 1960', hi: '1 मई 1960' },
+    area: { en: '1,96,024 sq km', hi: '1,96,024 वर्ग किमी' },
+    population: { en: '6.04 crore (2011)', hi: '6.04 करोड़ (2011)' },
+    language: { en: 'Gujarati', hi: 'गुजराती' },
+    literacy: { en: '78.0%', hi: '78.0%' },
+    overview: {
+      en: 'Gujarat is the birthplace of Mahatma Gandhi, known for the Statue of Unity, vibrant trade, and Garba festival.',
+      hi: 'गुजरात महात्मा गांधी की जन्मभूमि — स्टैच्यू ऑफ यूनिटी, व्यापार और गरबा उत्सव।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Gujarat', govt: 'https://gujaratindia.gov.in/' },
+  },
+  'west-bengal': {
+    name: { en: 'West Bengal', hi: 'पश्चिम बंगाल' },
+    capital: { en: 'Kolkata', hi: 'कोलकाता' },
+    formation: { en: '26 January 1950', hi: '26 जनवरी 1950' },
+    area: { en: '88,752 sq km', hi: '88,752 वर्ग किमी' },
+    population: { en: '9.13 crore (2011)', hi: '9.13 करोड़ (2011)' },
+    language: { en: 'Bengali', hi: 'बंगाली' },
+    literacy: { en: '76.3%', hi: '76.3%' },
+    overview: {
+      en: 'West Bengal is the cultural capital of India with Kolkata, Durga Puja, Sundarbans, and literary heritage of Tagore.',
+      hi: 'पश्चिम बंगाल सांस्कृतिक राजधानी — कोलकाता, दुर्गा पूजा, सुंदरबन और रवींद्रनाथ की साहित्यिक विरासत।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/West_Bengal', govt: 'https://wb.gov.in/' },
+  },
+  'madhya-pradesh': {
+    name: { en: 'Madhya Pradesh', hi: 'मध्य प्रदेश' },
+    capital: { en: 'Bhopal', hi: 'भोपाल' },
+    formation: { en: '1 November 1956', hi: '1 नवंबर 1956' },
+    area: { en: '3,08,245 sq km', hi: '3,08,245 वर्ग किमी' },
+    population: { en: '7.26 crore (2011)', hi: '7.26 करोड़ (2011)' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '69.3%', hi: '69.3%' },
+    overview: {
+      en: 'Madhya Pradesh, the Heart of India, hosts Khajuraho temples, Kanha Tiger Reserve, and Sanchi Stupa.',
+      hi: 'मध्य प्रदेश, भारत का हृदय — खजुराहो, कान्हा टाइगर रिजर्व और सांची स्तूप।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Madhya_Pradesh', govt: 'https://mp.gov.in/' },
+  },
+  odisha: {
+    name: { en: 'Odisha', hi: 'ओड़िशा' },
+    capital: { en: 'Bhubaneswar', hi: 'भुवनेश्वर' },
+    formation: { en: '26 January 1950 (as Orissa); 2011 renamed to Odisha', hi: '26 जनवरी 1950' },
+    area: { en: '1,55,707 sq km', hi: '1,55,707 वर्ग किमी' },
+    population: { en: '4.19 crore (2011)', hi: '4.19 करोड़ (2011)' },
+    language: { en: 'Odia', hi: 'ओड़िया' },
+    literacy: { en: '72.2%', hi: '72.2%' },
+    overview: {
+      en: 'Odisha is home to the Jagannath Temple, world-famous Rath Yatra, Odissi dance, and the Sundarbans wildlife sanctuary.',
+      hi: 'ओड़िशा जगन्नाथ मंदिर, विश्व प्रसिद्ध रथ यात्रा, ओड़िसी नृत्य और सुंदरबन वन्यजीव अभयारण्य का घर है।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Odisha', govt: 'https://odisha.gov.in/' },
+  },
+};
+
+// Generate default meta for states not fully defined
+statesList.forEach(({ id }) => {
+  if (!stateMeta[id]) {
+    const name = id.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    stateMeta[id] = {
+      name: { en: name, hi: name },
+      capital: { en: '—', hi: '—' },
+      formation: { en: '—', hi: '—' },
+      area: { en: '—', hi: '—' },
+      population: { en: '—', hi: '—' },
+      language: { en: '—', hi: '—' },
+      literacy: { en: '—', hi: '—' },
+      overview: {
+        en: `${name} is a state/UT of India. Explore districts and fetch live data from official sources.`,
+        hi: `${name} भारत का एक राज्य/कendra शासित प्रदेश है।`,
+      },
+      sources: {
+        wikipedia: `https://en.wikipedia.org/wiki/${name.replace(/ /g, '_')}`,
+        govt: 'https://www.india.gov.in/states-uts',
+      },
+    };
+  }
+});
+
+export const getStateById = (id) => {
+  const listItem = statesList.find((s) => s.id === id);
+  const meta = stateMeta[id];
+  if (!listItem || !meta) return null;
+  return { ...listItem, ...meta };
+};
+
+export const getStates = () => statesList.map((s) => getStateById(s.id));
+export const getStatesOnly = () => getStates().filter((s) => s.type === 'state');
+export const getUTsOnly = () => getStates().filter((s) => s.type === 'ut');

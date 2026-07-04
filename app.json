@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "India GK",
+    "slug": "textmy-india-gk-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#FF9933"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.textmy.indiagk"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FF9933"
+      },
+      "package": "com.textmy.indiagk"
+    }
+  }
+}

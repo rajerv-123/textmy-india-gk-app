@@ -2,7 +2,7 @@
 
 A bilingual (English / Hindi) React Native Expo app for Indian General Knowledge — national facts, state-wise details, district-level information, interactive quizzes, dark mode, and live Wikipedia enrichment.
 
-## Features
+## Features  
 
 - **National GK** — Constitution, history, geography, rivers, economy, culture, science, sports
 - **State GK** — All 28 states + 8 UTs with capital, area, population, literacy, official links
