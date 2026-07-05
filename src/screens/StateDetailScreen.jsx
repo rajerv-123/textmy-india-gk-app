@@ -51,6 +51,7 @@ export default function StateDetailScreen({ route, navigation }) {
 
   const districts = getDistrictsForState(stateId);
   const categoryContent = state.categories?.find((c) => c.key === activeCategory);
+  const regionLabel = state.region ? t(`regions.${state.region}`) : null;
 
   return (
     <View style={styles.container}>
@@ -80,8 +81,25 @@ export default function StateDetailScreen({ route, navigation }) {
           <InfoRow label={t('population')} value={state.population} icon="👥" />
           <InfoRow label={t('officialLanguage')} value={state.language} icon="🗣️" />
           <InfoRow label={t('literacyRate')} value={state.literacy} icon="📚" />
+          <InfoRow label={t('region')} value={regionLabel || state.region || '—'} icon="🧭" />
+          <InfoRow label={t('famousFor')} value={Array.isArray(state.famousFor) ? state.famousFor.join(', ') : state.famousFor || '—'} icon="⭐" />
           <InfoRow label={t('formation')} value={state.formation} icon="📅" />
         </View>
+
+        {(state.highlights?.length || state.funFact) > 0 && (
+          <Card title={t('highlights')} icon="✨">
+            {state.highlights?.length > 0 && (
+              <View style={styles.tagRow}>
+                {state.highlights.map((item) => (
+                  <View key={item} style={styles.tag}>
+                    <Text style={styles.tagText}>{item}</Text>
+                  </View>
+                ))}
+              </View>
+            )}
+            {state.funFact && <Text style={styles.factText}>💡 {state.funFact}</Text>}
+          </Card>
+        )}
 
         {state.wikiExtract && (
           <Card title={t('overview')} icon="📋">
@@ -172,6 +190,29 @@ const createStyles = (theme) =>
       fontSize: theme.fontSize.md,
       color: theme.colors.text,
       lineHeight: 24,
+    },
+    tagRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: theme.spacing.sm,
+      marginBottom: theme.spacing.sm,
+    },
+    tag: {
+      backgroundColor: theme.colors.primary + '16',
+      paddingHorizontal: theme.spacing.sm,
+      paddingVertical: theme.spacing.xs,
+      borderRadius: theme.borderRadius.full,
+    },
+    tagText: {
+      color: theme.colors.primary,
+      fontWeight: '700',
+      fontSize: theme.fontSize.sm,
+    },
+    factText: {
+      fontSize: theme.fontSize.md,
+      color: theme.colors.textSecondary,
+      lineHeight: 22,
+      marginTop: theme.spacing.xs,
     },
     sectionHeader: {
       paddingHorizontal: theme.spacing.md,

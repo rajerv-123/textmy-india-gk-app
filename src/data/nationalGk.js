@@ -40,6 +40,18 @@ export const nationalGk = {
       en: 'India has zero as a number, a concept discovered by Indian mathematicians and later adopted globally.',
       hi: 'भारत ने शून्य की संकल्पना की खोज की, जो भारतीय गणितज्ञों ने विश्व को दी।',
     },
+    {
+      en: 'India has 22 officially recognized languages, reflecting its incredible cultural diversity.',
+      hi: 'भारत में 22 आधिकारिक रूप से मान्यता प्राप्त भाषाएँ हैं, जो इसकी असाधारण सांस्कृतिक विविधता को दर्शाती हैं।',
+    },
+    {
+      en: 'The Indian rupee symbol ₹ was designed by D. Udaya Kumar in 2010.',
+      hi: 'भारतीय रुपया चिन्ह ₹ 2010 में डी. उदय कुमार द्वारा डिज़ाइन किया गया था।',
+    },
+    {
+      en: 'India is one of the few countries with a living tradition of classical dance, music, and theatre.',
+      hi: 'भारत उन कुछ देशों में से एक है जहाँ शास्त्रीय नृत्य, संगीत और रंगमंच की जीवित परंपरा मौजूद है।',
+    },
   ],
 
   categories: {

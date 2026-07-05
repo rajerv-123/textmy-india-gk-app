@@ -38,6 +38,84 @@ export const statesList = [
   { id: 'puducherry', type: 'ut', code: 'PY', color: '#FF7F50' },
 ];
 
+const stateRegionMap = {
+  'andhra-pradesh': 'south',
+  'arunachal-pradesh': 'northeast',
+  assam: 'northeast',
+  bihar: 'east',
+  chhattisgarh: 'central',
+  goa: 'west',
+  gujarat: 'west',
+  haryana: 'north',
+  'himachal-pradesh': 'north',
+  jharkhand: 'east',
+  karnataka: 'south',
+  kerala: 'south',
+  'madhya-pradesh': 'central',
+  maharashtra: 'west',
+  manipur: 'northeast',
+  meghalaya: 'northeast',
+  mizoram: 'northeast',
+  nagaland: 'northeast',
+  odisha: 'east',
+  punjab: 'north',
+  rajasthan: 'north',
+  sikkim: 'northeast',
+  'tamil-nadu': 'south',
+  telangana: 'south',
+  tripura: 'northeast',
+  'uttar-pradesh': 'north',
+  uttarakhand: 'north',
+  'west-bengal': 'east',
+  'andaman-nicobar': 'islands',
+  chandigarh: 'north',
+  'dadra-nagar-haveli-daman-diu': 'west',
+  delhi: 'north',
+  'jammu-kashmir': 'north',
+  ladakh: 'north',
+  lakshadweep: 'islands',
+  puducherry: 'south',
+};
+
+const extraStateData = {
+  'andhra-pradesh': { highlights: ['Tirupati Temple', 'Kuchipudi Dance', 'Visakhapatnam Port'], funFact: 'Andhra Pradesh is known for its spiritual heritage and major seaport economy.', featured: true },
+  'arunachal-pradesh': { highlights: ['Dawn-lit Himalayas', 'Buddhist monasteries', 'Tribal traditions'], funFact: 'Arunachal Pradesh is the easternmost state of India and is famous for its mountain landscapes.', featured: true },
+  assam: { highlights: ['Kaziranga National Park', 'Brahmaputra River', 'Tea estates'], funFact: 'Assam is one of India’s most biodiverse states and the country’s tea heartland.', featured: true },
+  bihar: { highlights: ['Nalanda', 'Bodh Gaya', 'Ganga plains'], funFact: 'Bihar is one of the oldest centres of learning in the world.', featured: false },
+  chhattisgarh: { highlights: ['Bastar culture', 'Iron ore reserves', 'Forest heritage'], funFact: 'Chhattisgarh is known as the rice bowl of India and has rich tribal traditions.', featured: false },
+  goa: { highlights: ['Beaches', 'Portuguese heritage', 'Seafood cuisine'], funFact: 'Goa is India’s smallest state by area and a famous tourism destination.', featured: true },
+  gujarat: { highlights: ['Statue of Unity', 'Gir National Park', 'Garba'], funFact: 'Gujarat is known for entrepreneurship, industrial growth, and the Rann of Kutch.', featured: true },
+  haryana: { highlights: ['Automotive industry', 'Agricultural growth', 'Delhi proximity'], funFact: 'Haryana is a major contributor to India’s food grain production and manufacturing.', featured: false },
+  'himachal-pradesh': { highlights: ['Apple orchards', 'Shimla', 'Adventure tourism'], funFact: 'Himachal Pradesh is famous for hill stations and Himalayan trekking.', featured: true },
+  jharkhand: { highlights: ['Mineral wealth', 'Waterfalls', 'Tribal culture'], funFact: 'Jharkhand has rich mineral deposits and many protected forests.', featured: false },
+  karnataka: { highlights: ['Bengaluru', 'Hampi', 'Western Ghats'], funFact: 'Karnataka is India’s leading technology and innovation hub.', featured: true },
+  kerala: { highlights: ['Backwaters', 'Ayurveda', 'Kathakali'], funFact: 'Kerala has the highest literacy rate in India and a famous coastal culture.', featured: true },
+  'madhya-pradesh': { highlights: ['Khajuraho', 'Kanha', 'Sanchi'], funFact: 'Madhya Pradesh is called the heart of India for its central geography and heritage sites.', featured: true },
+  maharashtra: { highlights: ['Mumbai', 'Ajanta-Ellora', 'Maratha heritage'], funFact: 'Maharashtra is the financial powerhouse of India and home to many iconic landmarks.', featured: true },
+  manipur: { highlights: ['Loktak Lake', 'Manipuri dance', 'Nongmaijing'], funFact: 'Manipur is known for its classical dance and beautiful lakes.', featured: false },
+  meghalaya: { highlights: ['Living root bridges', 'Cherapunji', 'Clouds'], funFact: 'Meghalaya receives some of the heaviest rainfall in the world.', featured: true },
+  mizoram: { highlights: ['Blue mountains', 'Bamboo crafts', 'Mizo culture'], funFact: 'Mizoram is celebrated for its green landscapes and vibrant tribal heritage.', featured: false },
+  nagaland: { highlights: ['Hornbill Festival', 'Naga tribes', 'Scenic hills'], funFact: 'Nagaland is known for its cultural festivals and warrior traditions.', featured: true },
+  odisha: { highlights: ['Jagannath Temple', 'Rath Yatra', 'Odissi dance'], funFact: 'Odisha has a rich temple heritage and is famous for its dance forms.', featured: true },
+  punjab: { highlights: ['Golden Temple', 'Five rivers', 'Basmati wheat'], funFact: 'Punjab is the breadbasket of India and home to the Sikh heritage trail.', featured: true },
+  rajasthan: { highlights: ['Jaipur', 'Thar Desert', 'Forts and palaces'], funFact: 'Rajasthan is home to some of India’s most famous forts and desert landscapes.', featured: true },
+  sikkim: { highlights: ['Kanchenjunga', 'Organic farming', 'Buddhist monasteries'], funFact: 'Sikkim is India’s first fully organic state.', featured: true },
+  'tamil-nadu': { highlights: ['Chennai', 'Madurai temples', 'Bharatanatyam'], funFact: 'Tamil Nadu preserves one of the oldest living languages and cultures in the world.', featured: true },
+  telangana: { highlights: ['Hyderabad', 'Pearl city', 'IT growth'], funFact: 'Telangana is India’s youngest state and a fast-growing technology centre.', featured: true },
+  tripura: { highlights: ['Palaces', 'Bamboo handicrafts', 'Tribal culture'], funFact: 'Tripura is known for its unique Bengali-Kokborok cultural blend.', featured: false },
+  'uttar-pradesh': { highlights: ['Taj Mahal', 'Varanasi', 'Ayodhya'], funFact: 'Uttar Pradesh is the most populous state in India and rich in spiritual heritage.', featured: true },
+  uttarakhand: { highlights: ['Char Dham', 'Rishikesh', 'Himalayan beauty'], funFact: 'Uttarakhand is the land of pilgrimage and adventure tourism.', featured: true },
+  'west-bengal': { highlights: ['Kolkata', 'Durga Puja', 'Sundarbans'], funFact: 'West Bengal is known for its intellectual heritage, arts and the Sundarbans.', featured: true },
+  'andaman-nicobar': { highlights: ['Island beaches', 'Coral reefs', 'Cellular Jail'], funFact: 'The Andaman and Nicobar Islands are known for their tropical beauty and marine biodiversity.', featured: true },
+  chandigarh: { highlights: ['Planned city', 'Capitol complex', 'Modern architecture'], funFact: 'Chandigarh is one of India’s most carefully planned cities.', featured: true },
+  'dadra-nagar-haveli-daman-diu': { highlights: ['Coastal tourism', 'Union territory blend', 'Beaches'], funFact: 'Dadra and Nagar Haveli, Daman and Diu together form a unique coastal union territory.', featured: false },
+  delhi: { highlights: ['Red Fort', 'India Gate', 'New Delhi'], funFact: 'Delhi is the political and cultural heart of India.', featured: true },
+  'jammu-kashmir': { highlights: ['Srinagar', 'Gulmarg', 'Ladakh links'], funFact: 'Jammu and Kashmir are famous for their valleys, gardens and mountain scenery.', featured: true },
+  ladakh: { highlights: ['Leh', 'Pangong Lake', 'Monasteries'], funFact: 'Ladakh is known for its high-altitude desert landscapes and Buddhist monasteries.', featured: true },
+  lakshadweep: { highlights: ['Coral atolls', 'Water sports', 'Island life'], funFact: 'Lakshadweep is India’s smallest union territory and a tropical island paradise.', featured: true },
+  puducherry: { highlights: ['French quarter', 'Beachfront', 'Auroville'], funFact: 'Puducherry blends French colonial charm with Indian culture.', featured: true },
+};
+
 export const stateMeta = {
   'andhra-pradesh': {
     name: { en: 'Andhra Pradesh', hi: 'आंध्र प्रदेश' },
@@ -291,7 +369,187 @@ export const stateMeta = {
     },
     sources: { wikipedia: 'https://en.wikipedia.org/wiki/Assam', govt: 'https://assam.gov.in/' },
   },
+  telangana: {
+    name: { en: 'Telangana', hi: 'तेलंगाना' },
+    capital: { en: 'Hyderabad', hi: 'हैदराबाद' },
+    formation: { en: '2 June 2014 (separated from Andhra Pradesh)', hi: '2 जून 2014' },
+    area: { en: '1,14,840 sq km', hi: '1,14,840 वर्ग किमी' },
+    population: { en: '3.50 crore (2011)', hi: '3.50 करोड़ (2011)' },
+    language: { en: 'Telugu, Urdu', hi: 'तेलुगु, उर्दू' },
+    literacy: { en: '66.4%', hi: '66.4%' },
+    overview: {
+      en: 'Telangana is India\'s youngest state, known for IT hub Hyderabad, Nizami culture, and rapid development.',
+      hi: 'तेलंगाना भारत का सबसे नया राज्य है, हैदराबाद IT हब के लिए जाना जाता है।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Telangana', govt: 'https://www.telangana.gov.in/' },
+  },
+  jharkhand: {
+    name: { en: 'Jharkhand', hi: 'झारखंड' },
+    capital: { en: 'Ranchi', hi: 'रांची' },
+    formation: { en: '15 November 2000 (separated from Bihar)', hi: '15 नवंबर 2000' },
+    area: { en: '79,716 sq km', hi: '79,716 वर्ग किमी' },
+    population: { en: '3.30 crore (2011)', hi: '3.30 करोड़ (2011)' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '66.4%', hi: '66.4%' },
+    overview: {
+      en: 'Jharkhand, Land of Tribals, is rich in mineral resources, known for waterfalls, forests, and tribal culture.',
+      hi: 'झारखंड, आदिवासियों की भूमि — जलप्रपात, वन, आदिवासी संस्कृति।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Jharkhand', govt: 'https://jharkhand.gov.in/' },
+  },
+  'himachal-pradesh': {
+    name: { en: 'Himachal Pradesh', hi: 'हिमाचल प्रदेश' },
+    capital: { en: 'Shimla', hi: 'शिमला' },
+    formation: { en: '25 January 1971', hi: '25 जनवरी 1971' },
+    area: { en: '55,673 sq km', hi: '55,673 वर्ग किमी' },
+    population: { en: '68.45 lakh (2011)', hi: '68.45 लाख (2011)' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '83.8%', hi: '83.8%' },
+    overview: {
+      en: 'Himachal Pradesh is a mountainous state known for apple orchards, adventure tourism, and the Himalayas.',
+      hi: 'हिमाचल प्रदेश एक पर्वतीय राज्य है जो सेब के बागों, साहसिक पर्यटन के लिए जाना जाता है।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Himachal_Pradesh', govt: 'https://himachalpradi.gov.in/' },
+  },
+  uttarakhand: {
+    name: { en: 'Uttarakhand', hi: 'उत्तराखंड' },
+    capital: { en: 'Dehradun', hi: 'देहरादून' },
+    formation: { en: '9 November 2000 (separated from Uttar Pradesh)', hi: '9 नवंबर 2000' },
+    area: { en: '53,483 sq km', hi: '53,483 वर्ग किमी' },
+    population: { en: '1.01 crore (2011)', hi: '1.01 करोड़ (2011)' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '79.6%', hi: '79.6%' },
+    overview: {
+      en: 'Uttarakhand, Land of Gods, is known for pilgrimage sites, yoga capital Rishikesh, and Himalayan beauty.',
+      hi: 'उत्तराखंड, देवताओं की भूमि — तीर्थ स्थल, योग राजधानी ऋषिकेश।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Uttarakhand', govt: 'https://uttarakhand.gov.in/' },
+  },
+  chhattisgarh: {
+    name: { en: 'Chhattisgarh', hi: 'छत्तीसगढ़' },
+    capital: { en: 'Raipur', hi: 'रायपुर' },
+    formation: { en: '1 November 2000 (separated from Madhya Pradesh)', hi: '1 नवंबर 2000' },
+    area: { en: '1,35,191 sq km', hi: '1,35,191 वर्ग किमी' },
+    population: { en: '2.55 crore (2011)', hi: '2.55 करोड़ (2011)' },
+    language: { en: 'Hindi', hi: 'हिंदी' },
+    literacy: { en: '70.3%', hi: '70.3%' },
+    overview: {
+      en: 'Chhattisgarh, Rice Bowl of India, is the mineral-rich heart of India with tribal heritage and forests.',
+      hi: 'छत्तीसगढ़, भारत का चावल का कटोरा — खनिज समृद्ध, जनजातीय विरासत।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Chhattisgarh', govt: 'https://chhattisgarh.gov.in/' },
+  },
+  'arunachal-pradesh': {
+    name: { en: 'Arunachal Pradesh', hi: 'अरुणाचल प्रदेश' },
+    capital: { en: 'Itanagar', hi: 'ईटानगर' },
+    formation: { en: '20 February 1987', hi: '20 फरवरी 1987' },
+    area: { en: '83,743 sq km', hi: '83,743 वर्ग किमी' },
+    population: { en: '13.83 lakh (2011)', hi: '13.83 लाख (2011)' },
+    language: { en: 'English, tribal languages', hi: 'अंग्रेजी, जनजातीय भाषाएं' },
+    literacy: { en: '65.4%', hi: '65.4%' },
+    overview: {
+      en: 'Arunachal Pradesh, Land of Dawn, is the easternmost state with Buddhist culture, pristine forests, and tribal traditions.',
+      hi: 'अरुणाचल प्रदेश, प्रभात की भूमि — बौद्ध संस्कृति, वन, जनजातीय परंपराएं।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Arunachal_Pradesh', govt: 'https://www.arunachalpradesh.gov.in/' },
+  },
+  manipur: {
+    name: { en: 'Manipur', hi: 'मणिपुर' },
+    capital: { en: 'Imphal', hi: 'इंफाल' },
+    formation: { en: '21 January 1972', hi: '21 जनवरी 1972' },
+    area: { en: '22,327 sq km', hi: '22,327 वर्ग किमी' },
+    population: { en: '28.56 lakh (2011)', hi: '28.56 लाख (2011)' },
+    language: { en: 'Manipuri', hi: 'मणिपुरी' },
+    literacy: { en: '79.8%', hi: '79.8%' },
+    overview: {
+      en: 'Manipur, Jewel of India, is known for classical Manipuri dance, Loktak Lake, and natural beauty.',
+      hi: 'मणिपुर, भारत का गहना — शास्त्रीय मणिपुरी नृत्य, लोकटक झील।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Manipur', govt: 'https://manipur.gov.in/' },
+  },
+  meghalaya: {
+    name: { en: 'Meghalaya', hi: 'मेघालय' },
+    capital: { en: 'Shillong', hi: 'शिलांग' },
+    formation: { en: '21 January 1972', hi: '21 जनवरी 1972' },
+    area: { en: '22,429 sq km', hi: '22,429 वर्ग किमी' },
+    population: { en: '29.66 lakh (2011)', hi: '29.66 लाख (2011)' },
+    language: { en: 'Khasi, tribal languages', hi: 'खासी, जनजातीय भाषाएं' },
+    literacy: { en: '75.5%', hi: '75.5%' },
+    overview: {
+      en: 'Meghalaya, Abode of Clouds, is the wettest place on earth, known for rainfall, waterfalls, and living root bridges.',
+      hi: 'मेघालय, बादलों की निवास — पृथ्वी पर सबसे गीला स्थान, जीवित जड़ के पुल।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Meghalaya', govt: 'https://meghalaya.gov.in/' },
+  },
+  mizoram: {
+    name: { en: 'Mizoram', hi: 'मिजोरम' },
+    capital: { en: 'Aizawl', hi: 'आइजोल' },
+    formation: { en: '20 February 1987', hi: '20 फरवरी 1987' },
+    area: { en: '21,081 sq km', hi: '21,081 वर्ग किमी' },
+    population: { en: '10.97 lakh (2011)', hi: '10.97 लाख (2011)' },
+    language: { en: 'Mizo', hi: 'मिजो' },
+    literacy: { en: '91.6% (second highest)', hi: '91.6% (दूसरी सर्वोच्च)' },
+    overview: {
+      en: 'Mizoram, Land of Blue Mountains, is known for bamboo handicrafts, tribal culture, and beautiful landscapes.',
+      hi: 'मिजोरम, नीली पहाड़ियों की भूमि — बांस शिल्प, जनजातीय संस्कृति।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Mizoram', govt: 'https://mizoram.gov.in/' },
+  },
+  nagaland: {
+    name: { en: 'Nagaland', hi: 'नागालैंड' },
+    capital: { en: 'Kohima', hi: 'कोहिमा' },
+    formation: { en: '1 December 1963', hi: '1 दिसंबर 1963' },
+    area: { en: '16,579 sq km', hi: '16,579 वर्ग किमी' },
+    population: { en: '19.80 lakh (2011)', hi: '19.80 लाख (2011)' },
+    language: { en: 'Nagamese, tribal languages', hi: 'नागामी, जनजातीय भाषाएं' },
+    literacy: { en: '80.1%', hi: '80.1%' },
+    overview: {
+      en: 'Nagaland is known for Naga tribal culture, Hornbill Festival, warrior traditions, and scenic beauty.',
+      hi: 'नागालैंड नागा जनजातीय संस्कृति, हॉर्नबिल महोत्सव, योद्धा परंपराओं के लिए जाना जाता है।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Nagaland', govt: 'https://nagaland.gov.in/' },
+  },
+  sikkim: {
+    name: { en: 'Sikkim', hi: 'सिक्किम' },
+    capital: { en: 'Gangtok', hi: 'गंगटोक' },
+    formation: { en: '16 May 1975', hi: '16 मई 1975' },
+    area: { en: '7,096 sq km', hi: '7,096 वर्ग किमी' },
+    population: { en: '6.07 lakh (2011)', hi: '6.07 लाख (2011)' },
+    language: { en: 'Nepali, English, Tibetan', hi: 'नेपाली, अंग्रेजी, तिब्बती' },
+    literacy: { en: '81.2%', hi: '81.2%' },
+    overview: {
+      en: 'Sikkim is known for organic farming, Tibetan Buddhism, Kanchenjunga mountain, and biodiversity.',
+      hi: 'सिक्किम जैव खेती, तिब्बती बौद्ध धर्म, कंचनजंगा, जैव विविधता के लिए जाना जाता है।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Sikkim', govt: 'https://sikkim.gov.in/' },
+  },
+  tripura: {
+    name: { en: 'Tripura', hi: 'त्रिपुरा' },
+    capital: { en: 'Agartala', hi: 'अगरतला' },
+    formation: { en: '21 January 1972', hi: '21 जनवरी 1972' },
+    area: { en: '10,486 sq km', hi: '10,486 वर्ग किमी' },
+    population: { en: '36.71 lakh (2011)', hi: '36.71 लाख (2011)' },
+    language: { en: 'Bengali, tribal languages', hi: 'बंगाली, जनजातीय भाषाएं' },
+    literacy: { en: '87.8%', hi: '87.8%' },
+    overview: {
+      en: 'Tripura is known for Bengali-Kokborok culture, palaces, handicrafts, and tribal traditions.',
+      hi: 'त्रिपुरा बंगाली-कोकबोरोक संस्कृति, महल, हस्तशिल्प के लिए जाना जाता है।',
+    },
+    sources: { wikipedia: 'https://en.wikipedia.org/wiki/Tripura', govt: 'https://tripura.gov.in/' },
+  },
 };
+
+Object.entries(extraStateData).forEach(([id, extra]) => {
+  if (stateMeta[id]) {
+    stateMeta[id] = { ...stateMeta[id], ...extra };
+  }
+});
+
+statesList.forEach((state) => {
+  if (!state.region && stateRegionMap[state.id]) {
+    state.region = stateRegionMap[state.id];
+  }
+});
 
 // Generate default meta for states not fully defined
 statesList.forEach(({ id }) => {
@@ -316,6 +574,22 @@ statesList.forEach(({ id }) => {
     };
   }
 });
+
+export const getRegionOptions = () => [
+  { id: 'all', label: 'All Regions' },
+  { id: 'north', label: 'North India' },
+  { id: 'south', label: 'South India' },
+  { id: 'east', label: 'East India' },
+  { id: 'west', label: 'West India' },
+  { id: 'central', label: 'Central India' },
+  { id: 'northeast', label: 'North-East India' },
+  { id: 'islands', label: 'Islands & Coasts' },
+];
+
+export const getStatesByRegion = (regionId = 'all') => {
+  if (!regionId || regionId === 'all') return getStates();
+  return getStates().filter((s) => s.region === regionId);
+};
 
 export const getStateById = (id) => {
   const listItem = statesList.find((s) => s.id === id);

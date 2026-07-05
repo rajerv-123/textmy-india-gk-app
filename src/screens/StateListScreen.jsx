@@ -13,7 +13,7 @@ import { useLanguage } from '../context/LanguageContext';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import SettingsPanel from '../components/SettingsPanel';
-import { getStatesOnly, getUTsOnly } from '../data/statesMetadata';
+import { getStates, getStatesOnly, getUTsOnly, getRegionOptions } from '../data/statesMetadata';
 import { searchStatesAndDistricts } from '../services/dataService';
 
 export default function StateListScreen({ navigation }) {
@@ -22,22 +22,25 @@ export default function StateListScreen({ navigation }) {
   const { t } = useTranslation();
   const [query, setQuery] = useState('');
   const [tab, setTab] = useState('states');
+  const [activeRegion, setActiveRegion] = useState('all');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const styles = createStyles(theme);
 
   const states = tab === 'states' ? getStatesOnly() : getUTsOnly();
+  const featuredStates = useMemo(() => getStates().filter((s) => s.featured).slice(0, 6), []);
+  const regionOptions = useMemo(() => getRegionOptions().map((option) => ({ ...option, label: t(`regions.${option.id}`) })), [t]);
   const searchResults = useMemo(
     () => (query ? searchStatesAndDistricts(query) : []),
     [query],
   );
 
+  const visibleStates = states.filter((s) => activeRegion === 'all' || s.region === activeRegion);
   const filtered = query
-    ? searchResults.filter((r) => r.type === 'state' || (tab === 'ut' && r.type === 'state'))
-    : states.filter((s) => {
-        if (!query) return true;
-        const q = query.toLowerCase();
-        return s.name.en.toLowerCase().includes(q) || s.name.hi.includes(q);
-      });
+    ? searchResults.filter((r) => {
+        if (activeRegion !== 'all' && r.region !== activeRegion) return false;
+        return r.type === 'state' || (tab === 'ut' && r.type === 'state');
+      })
+    : visibleStates;
 
   const renderItem = (item) => {
     if (item.type === 'district') {
@@ -93,7 +96,39 @@ export default function StateListScreen({ navigation }) {
       </View>
 
       {!query && (
-        <View style={styles.tabs}>
+        <>
+          {featuredStates.length > 0 && (
+            <View style={styles.featuredCard}>
+              <Text style={styles.featuredTitle}>{t('featuredStates')}</Text>
+              <View style={styles.featuredRow}>
+                {featuredStates.map((state) => (
+                  <TouchableOpacity
+                    key={state.id}
+                    style={styles.featuredChip}
+                    onPress={() => navigation.navigate('StateDetail', { stateId: state.id })}
+                  >
+                    <Text style={styles.featuredChipText}>{translate(state.name)}</Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          )}
+          <View style={styles.regionWrap}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.regionRow}>
+              {regionOptions.map((option) => (
+                <TouchableOpacity
+                  key={option.id}
+                  style={[styles.regionChip, activeRegion === option.id && styles.regionChipActive]}
+                  onPress={() => setActiveRegion(option.id)}
+                >
+                  <Text style={[styles.regionChipText, activeRegion === option.id && styles.regionChipTextActive]}>
+                    {option.label}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          </View>
+          <View style={styles.tabs}>
           <TouchableOpacity
             style={[styles.tab, tab === 'states' && styles.tabActive]}
             onPress={() => setTab('states')}
@@ -111,6 +146,7 @@ export default function StateListScreen({ navigation }) {
             </Text>
           </TouchableOpacity>
         </View>
+        </>
       )}
 
       <ScrollView contentContainerStyle={styles.list}>
@@ -139,6 +175,64 @@ const createStyles = (theme) =>
       color: theme.colors.text,
       borderWidth: 1,
       borderColor: theme.colors.border,
+    },
+    regionWrap: {
+      paddingHorizontal: theme.spacing.md,
+      paddingTop: theme.spacing.sm,
+    },
+    regionRow: {
+      gap: theme.spacing.sm,
+    },
+    regionChip: {
+      paddingHorizontal: theme.spacing.md,
+      paddingVertical: theme.spacing.sm,
+      borderRadius: theme.borderRadius.full,
+      backgroundColor: theme.colors.surface,
+      borderWidth: 1,
+      borderColor: theme.colors.border,
+    },
+    regionChipActive: {
+      backgroundColor: theme.colors.primary,
+      borderColor: theme.colors.primary,
+    },
+    regionChipText: {
+      color: theme.colors.text,
+      fontWeight: '600',
+      fontSize: theme.fontSize.sm,
+    },
+    regionChipTextActive: {
+      color: '#FFF',
+    },
+    featuredCard: {
+      marginHorizontal: theme.spacing.md,
+      marginTop: theme.spacing.sm,
+      padding: theme.spacing.md,
+      borderRadius: theme.borderRadius.lg,
+      backgroundColor: theme.colors.surface,
+      borderWidth: 1,
+      borderColor: theme.colors.border,
+    },
+    featuredTitle: {
+      fontSize: theme.fontSize.md,
+      fontWeight: '700',
+      color: theme.colors.text,
+      marginBottom: theme.spacing.sm,
+    },
+    featuredRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: theme.spacing.sm,
+    },
+    featuredChip: {
+      backgroundColor: theme.colors.primary + '16',
+      paddingHorizontal: theme.spacing.sm,
+      paddingVertical: theme.spacing.xs,
+      borderRadius: theme.borderRadius.full,
+    },
+    featuredChipText: {
+      color: theme.colors.primary,
+      fontWeight: '600',
+      fontSize: theme.fontSize.sm,
     },
     tabs: {
       flexDirection: 'row',

@@ -44,7 +44,7 @@ export function searchStatesAndDistricts(query, lang = 'en') {
     const nameEn = state.name.en.toLowerCase();
     const nameHi = state.name.hi;
     if (nameEn.includes(q) || nameHi.includes(q)) {
-      results.push({ type: 'state', id: state.id, name: state.name, color: state.color });
+      results.push({ type: 'state', id: state.id, name: state.name, color: state.color, region: state.region });
     }
 
     const districts = getDistrictsForState(state.id);
@@ -59,6 +59,7 @@ export function searchStatesAndDistricts(query, lang = 'en') {
           name: d.name,
           stateName: state.name,
           color: state.color,
+          region: state.region,
         });
       }
     });

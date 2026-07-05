@@ -12,6 +12,7 @@ import StateListScreen from '../screens/StateListScreen';
 import StateDetailScreen from '../screens/StateDetailScreen';
 import DistrictDetailScreen from '../screens/DistrictDetailScreen';
 import QuizScreen from '../screens/QuizScreen';
+import CompareStatesScreen from '../screens/CompareStatesScreen';
 
 const Tab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -82,6 +83,11 @@ function StateStackScreen() {
       <StateStack.Screen
         name="DistrictDetail"
         component={DistrictDetailScreen}
+        options={{ headerShown: false }}
+      />
+      <StateStack.Screen
+        name="CompareStates"
+        component={CompareStatesScreen}
         options={{ headerShown: false }}
       />
     </StateStack.Navigator>

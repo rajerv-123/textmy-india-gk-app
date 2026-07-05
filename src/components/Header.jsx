@@ -90,29 +90,37 @@ export function SourceLinks({ sources, style }) {
 const createStyles = (theme) =>
   StyleSheet.create({
     container: {
-      paddingHorizontal: theme.spacing.md,
-      paddingVertical: theme.spacing.sm,
+      paddingHorizontal: theme.spacing.lg,
+      paddingVertical: theme.spacing.md,
       backgroundColor: theme.colors.surface,
-      borderBottomWidth: 1,
-      borderBottomColor: theme.colors.border,
+      borderBottomWidth: 2,
+      borderBottomColor: theme.colors.primary + '20',
+      ...theme.shadows.card,
     },
     row: { flexDirection: 'row', alignItems: 'center' },
     backBtn: {
-      marginRight: theme.spacing.sm,
-      padding: theme.spacing.sm,
+      marginRight: theme.spacing.md,
+      padding: theme.spacing.md,
+      borderRadius: theme.borderRadius.md,
+      backgroundColor: theme.colors.background,
     },
-    backText: { fontSize: theme.fontSize.xl, color: theme.colors.primary },
+    backText: { fontSize: theme.fontSize.xl, color: theme.colors.primary, fontWeight: '700' },
     titleWrap: { flex: 1 },
     title: {
-      fontSize: theme.fontSize.lg,
+      fontSize: theme.fontSize.xl,
       fontWeight: '700',
       color: theme.colors.text,
+      lineHeight: 28,
     },
     subtitle: {
       fontSize: theme.fontSize.sm,
       color: theme.colors.textSecondary,
-      marginTop: 2,
+      marginTop: 4,
     },
-    iconBtn: { padding: theme.spacing.sm },
+    iconBtn: { 
+      padding: theme.spacing.md,
+      borderRadius: theme.borderRadius.md,
+      backgroundColor: theme.colors.background,
+    },
     iconText: { fontSize: theme.fontSize.lg },
   });

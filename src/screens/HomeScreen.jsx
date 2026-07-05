@@ -97,13 +97,22 @@ export default function HomeScreen({ navigation }) {
           }
         />
 
-        <Card
-          title={t('startQuiz')}
-          subtitle={t('quizzes')}
-          icon="🎯"
-          onPress={() => navigation.navigate('QuizTab')}
-          color={theme.colors.secondary}
-        />
+        <View style={styles.quickActions}>
+          <Card
+            title={t('startQuiz')}
+            subtitle={t('quizzes')}
+            icon="🎯"
+            onPress={() => navigation.navigate('QuizTab')}
+            color={theme.colors.secondary}
+          />
+          <Card
+            title={t('compareStates')}
+            subtitle={t('compareSubtitle')}
+            icon="⚖️"
+            onPress={() => navigation.navigate('StateGkTab', { screen: 'CompareStates' })}
+            color={theme.colors.primary}
+          />
+        </View>
       </ScrollView>
 
       <SettingsPanel visible={settingsOpen} onClose={() => setSettingsOpen(false)} />
@@ -182,6 +191,10 @@ const createStyles = (theme) =>
       flexDirection: 'row',
       flexWrap: 'wrap',
       paddingHorizontal: theme.spacing.sm,
+    },
+    quickActions: {
+      paddingHorizontal: theme.spacing.md,
+      marginTop: theme.spacing.sm,
     },
     categoryItem: {
       width: '25%',
